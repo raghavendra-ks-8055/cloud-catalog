@@ -1,0 +1,232 @@
+test7
+test7
+test7
+test7
+test6
+test6
+test6
+test5new
+test5
+test5
+create MR conflict
+test5
+5
+5
+5
+5
+5
+5
+5
+5
+TEST4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+4
+
+TEST3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+
+
+TEST22
+2
+2
+2
+2
+2
+2
+
+
+b) Examples of comments to add is shown below:
+
+    b1) single line comment
+        /* Add your comment here, not exceeding 80 chars per line */
+
+    b2) Multi-line comment
+        /*
+         * Add your comments here, if the comments exceeds 80 char,
+         * wrap to next line
+         */
+
+    b3) Multi-line comment (another way)
+
+        /*
+           Add your comments here, if the comments is exceeding 80
+           chars, wrap to next line
+         */
+
+c) Avoid whitespaces and inserting Tab.
+    c1) if you're using Vi/Vim editor, use below setting in ~/.vimrc
+        set tabstop=4
+        set shiftwidth=4
+        set expandtab
+    c2) if you're using any other editor of your choice, please find
+        the equivalent setting and set it.
+
+d) How to write the if else syntax:
+    Example-1:
+        if (<expre>) {
+            /* your code */
+        }
+
+    Example-2:
+        if (<expre>) {
+            /* code */
+        } else {
+            /* code */
+        }
+
+    Example-3:
+        if (<expre>) {
+            /* code */
+        } else if (<expre2>) {
+            /* code */
+        } else {
+            /* code */
+        }
+
+e) How to write the while syntax:
+
+    Example-1:
+        while (<condition>) {
+            /* code */
+        }
+
+    Example-2:
+        do {
+            /* code */
+        } while (<condition>)
+
+f) How to write the for loop syntax:
+
+    Example-1:
+        for (x=0; x < y; x++) {
+            /* code */
+            x = x + 8
+        }
+
+g) Assignment of values to variable. Examples are shown below:
+    Correct way:
+        x = 1;
+        i = 10;
+        x = i;
+
+    Incorrect way:
+        x=1;
+        i=2;
+        x=i;
+
+h) How to write the functions.
+
+    Correct way:
+
+        void foobar (int a, char b)
+        {
+        }
+        
+        void foobar (void)
+        {
+        }
+
+        char *
+        foobar (char *a, int *b)
+        {
+            char *p = "a";
+            return p;
+        }
+
+        int
+        oran_operations_operational_info(sr_session_ctx_t *session, uint32_t sub_id, 
+                                const char *module_name, const char *path,
+                                const char *request_xpath, uint32_t request_id,
+                                struct lyd_node **parent, void *private_data)
+        {
+            int rc = 0;
+            /* your code */
+
+            return rc;
+        }
+        
+
+    Incorrect way:
+        
+        void foobar (int a, char b) {
+        }
+
+i) How much spacing and alignment of code required ?
+    Spacing should be 4 whitespaces and NOT tab (insert).
+
+j) How to write the struct/union definition ?
+    Example is shown below:
+
+    typedef struct managed_element_rec {
+        /* identifier as key for this record */
+        unsigned int id;
+        /* identifier name */
+        unsigned char id_name[24];
+        /* context attached with this managed element */
+        void *ctx;
+        /* Any timer attached with this ME */
+        int timer_fd;
+        /* Reference count for this ME */
+        unsigned int ref_cnt;
+    } me_t;
+
+k) Holistic example of everything:
+
+Correct way:
+
+int sum (int a, int b)
+{
+    int c = 0, d = 10;
+
+    if (a > b) {
+        c = a;
+    } else {
+        c = b;
+        if (c < d) {
+            c = d;
+        }
+    }
+
+    return c;
+}
+
+Incorrect way:
+
+int sum (int a, int b) {
+  int c = 0, d = 10;
+
+  if (a > b) {
+   c = a;
+    } else {
+      c = b;
+      if (c < d) {
+       c = d;
+      }
+    }
+    return c;
+}
+
